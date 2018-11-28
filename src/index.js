@@ -37,6 +37,7 @@ class App extends React.Component {
     return Object.assign({}, location, {
       daylight: `${timeDiff._data.hours} hours, ${timeDiffMins} minutes`,
       daylightNum,
+      latLong,
       sunrise: moment.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
       sunset: moment.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
       timezone: data.timezone

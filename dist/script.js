@@ -42654,6 +42654,7 @@ function (_React$Component) {
                 return _context.abrupt("return", Object.assign({}, location, {
                   daylight: "".concat(timeDiff._data.hours, " hours, ").concat(timeDiffMins, " minutes"),
                   daylightNum: daylightNum,
+                  latLong: latLong,
                   sunrise: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
                   sunset: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
                   timezone: data.timezone
@@ -42727,12 +42728,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var daylight = _ref.daylight,
+      latLong = _ref.latLong,
       location = _ref.location,
       sunrise = _ref.sunrise,
       sunset = _ref.sunset;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunrise: ", sunrise), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunset: ", sunset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", location, " (", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, latLong), ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunrise: ", sunrise), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunset: ", sunset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight));
 });
 
 /***/ }),
