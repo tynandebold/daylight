@@ -7,3 +7,18 @@
   margin-bottom: 20px;
   padding: 20px;
 }
+
+.viz-wrapper {
+  background: lightseagreen;
+  height: 2px;
+  position: relative;
+}
+
+.marker {
+  background: lightsalmon;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  top: -9px;
+  width: 20px;
+}

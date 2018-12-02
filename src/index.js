@@ -39,7 +39,9 @@ class App extends React.Component {
       daylightNum,
       latLong,
       sunrise: moment.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
-      sunset: moment.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
+      sunrise24: moment.unix(sunriseUnix).tz(data.timezone).format('HH:mm'),
+      sunset: moment.unix(sunsetUnix).tz(data.timezone).format('h:mm'),
+      sunset24: moment.unix(sunsetUnix).tz(data.timezone).format('HH:mm'),
       timezone: data.timezone
     });
   }

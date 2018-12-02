@@ -1171,7 +1171,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border box;\n          box-sizing: border box; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 20px;\n  padding: 20px; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border box;\n          box-sizing: border box; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 20px;\n  padding: 20px; }\n\n.viz-wrapper {\n  background: lightseagreen;\n  height: 2px;\n  position: relative; }\n\n.marker {\n  background: lightsalmon;\n  border-radius: 50%;\n  height: 20px;\n  position: absolute;\n  top: -9px;\n  width: 20px; }\n", ""]);
 
 // exports
 
@@ -42656,7 +42656,9 @@ function (_React$Component) {
                   daylightNum: daylightNum,
                   latLong: latLong,
                   sunrise: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
-                  sunset: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
+                  sunrise24: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix).tz(data.timezone).format('HH:mm'),
+                  sunset: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('h:mm'),
+                  sunset24: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('HH:mm'),
                   timezone: data.timezone
                 }));
 
@@ -42725,16 +42727,38 @@ react_dom__WEBPACK_IMPORTED_MODULE_12___default.a.render(react__WEBPACK_IMPORTED
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var daylight = _ref.daylight,
       latLong = _ref.latLong,
       location = _ref.location,
       sunrise = _ref.sunrise,
-      sunset = _ref.sunset;
+      sunrise24 = _ref.sunrise24,
+      sunset = _ref.sunset,
+      sunset24 = _ref.sunset24;
+  var sunriseAsDec = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunrise24).asHours();
+  var sunsetAsDec = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunset24).asHours();
+  var sunriseCoord = sunriseAsDec / 24 * 100;
+  var sunsetCoord = sunsetAsDec / 24 * 100;
+  console.log(sunsetAsDec, sunsetAsDec / 24);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", location, " (", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, latLong), ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunrise: ", sunrise), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunset: ", sunset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", location, " (", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, latLong), ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunrise: ", sunrise), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunset: ", sunset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "viz-wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "marker",
+    style: {
+      left: sunriseCoord + '%'
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "marker",
+    style: {
+      left: sunsetCoord + '%'
+    }
+  })));
 });
 
 /***/ }),
