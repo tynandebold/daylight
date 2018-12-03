@@ -7,7 +7,7 @@ export default function ({ daylight, latLong, location, sunrise, sunrise24, suns
   const sunriseCoord = (sunriseAsDec / 24) * 100;
   const sunsetCoord = (sunsetAsDec / 24) * 100;
 
-  console.log(sunsetAsDec, (sunsetAsDec / 24));
+  console.log(sunset);
   
 
   return (
