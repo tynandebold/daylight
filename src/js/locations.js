@@ -30,5 +30,9 @@ export const locations = [
   {
     location: "Tokyo",
     coords: "35.6895,139.6917"
+  },
+  {
+    location: "Aukland",
+    coords: "-36.8485,174.7633"
   }
 ];

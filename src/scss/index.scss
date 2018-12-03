@@ -1,24 +1,57 @@
 * {
-  box-sizing: border box;
+  box-sizing: border-box;
+}
+
+body {
+  color: whitesmoke;
+  background: #000;
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 20px;
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .location {
   border: 1px solid lightblue;
   margin-bottom: 20px;
   padding: 20px;
+  width: calc(33% - 10px);
 }
 
 .viz-wrapper {
   background: lightseagreen;
   height: 2px;
+  margin: 120px 0 10px;
   position: relative;
 }
 
 .marker {
-  background: lightsalmon;
+  background: #ffeb3b;
   border-radius: 50%;
-  height: 20px;
+  height: 16px;
   position: absolute;
-  top: -9px;
-  width: 20px;
+  top: -7.5px;
+  width: 16px;
+  z-index: 2;
+}
+
+.line {
+  background: #ffeb3b38;
+  height: 90px;
+  position: absolute;
+  top: -89px;
+  border: dashed 0.1em #ffeb3b;
+  border-color: #ffeb3b transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  z-index: 1;
+}
+
+.label {
+  font-size: 10px;
+  position: absolute;
+  top: 10px;
 }
