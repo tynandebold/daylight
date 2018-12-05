@@ -14,9 +14,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getAllData().then((data) => {
-      this.setState({ data });
-    });
+    const today = moment().format('MM-DD-YYYY');
+    const setDate = localStorage.getItem('daylightDay');
+    const hasData = moment().isSame(moment(setDate, 'MM-DD-YYYY'), 'day');    
+
+    if (hasData) {
+      this.setState({
+        data: JSON.parse(localStorage.getItem('daylightData'))
+      });
+    } else {
+      this.getAllData().then((data) => {
+        localStorage.setItem('daylightData', JSON.stringify(data));
+        localStorage.setItem('daylightDay', today);
+        this.setState({ data });
+      });
+    }
   }
 
   getAllData() {

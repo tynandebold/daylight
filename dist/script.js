@@ -1171,7 +1171,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: 'IBM Plex Sans', sans-serif;\n  margin: 20px; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 20px;\n  padding: 20px;\n  width: calc(33% - 10px); }\n\n.viz-wrapper {\n  background: lightseagreen;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.marker {\n  background: #ffeb3b;\n  border-radius: 50%;\n  height: 16px;\n  position: absolute;\n  top: -7.5px;\n  width: 16px;\n  z-index: 2; }\n\n.line {\n  background: rgba(255, 235, 59, 0.21961);\n  height: 90px;\n  position: absolute;\n  top: -89px;\n  border: dashed 0.1em #ffeb3b;\n  border-color: #ffeb3b transparent transparent transparent;\n  border-radius: 50%/100px 100px 0 0;\n  z-index: 1; }\n\n.label {\n  font-size: 10px;\n  position: absolute;\n  top: 10px; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: 'IBM Plex Sans', sans-serif;\n  margin: 20px; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 20px;\n  padding: 20px;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.viz-wrapper {\n  background: lightseagreen;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz-wrapper .marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz-wrapper .line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz-wrapper .label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n", ""]);
 
 // exports
 
@@ -42686,11 +42686,24 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.getAllData().then(function (data) {
-        _this2.setState({
-          data: data
+      var today = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()().format('MM-DD-YYYY');
+      var setDate = localStorage.getItem('daylightDay');
+      var hasData = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()().isSame(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()(setDate, 'MM-DD-YYYY'), 'day');
+
+      if (hasData) {
+        this.setState({
+          data: JSON.parse(localStorage.getItem('daylightData'))
         });
-      });
+      } else {
+        this.getAllData().then(function (data) {
+          localStorage.setItem('daylightData', JSON.stringify(data));
+          localStorage.setItem('daylightDay', today);
+
+          _this2.setState({
+            data: data
+          });
+        });
+      }
     }
   }, {
     key: "getAllData",
@@ -42797,31 +42810,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "locations", function() { return locations; });
 var locations = [{
   location: "Los Angeles",
-  coords: "34.0522,-118.2437"
+  coords: "34.0522, -118.2437"
 }, {
   location: "Medellín",
-  coords: "6.2442,-75.5812"
+  coords: "6.2442, -75.5812"
 }, {
   location: "Wells, Maine",
-  coords: "43.3222,-70.5805"
+  coords: "43.3222, -70.5805"
 }, {
   location: "Copenhagen",
-  coords: "55.6761,12.5683"
+  coords: "55.6761, 12.5683"
 }, {
   location: "Kigali, Rwanda",
-  coords: "-1.9706,30.1044"
+  coords: "-1.9706, 30.1044"
 }, {
   location: "Trang, Thailand",
-  coords: "7.5645,99.6239"
+  coords: "7.5645, 99.6239"
 }, {
   location: "Hong Kong",
-  coords: "22.3964,114.1095"
+  coords: "22.3964, 114.1095"
 }, {
   location: "Tokyo",
-  coords: "35.6895,139.6917"
+  coords: "35.6895, 139.6917"
 }, {
   location: "Aukland",
-  coords: "-36.8485,174.7633"
+  coords: "-36.8485, 174.7633"
 }];
 
 /***/ }),
