@@ -1171,7 +1171,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: 'IBM Plex Sans', sans-serif;\n  margin: 20px; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 20px;\n  padding: 20px;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.viz-wrapper {\n  background: lightseagreen;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz-wrapper .marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz-wrapper .line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz-wrapper .label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: 'IBM Plex Sans', sans-serif;\n  margin: 1.5em; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.location__viz {\n  background: lightseagreen;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n", ""]);
 
 // exports
 
@@ -42752,48 +42752,50 @@ __webpack_require__.r(__webpack_exports__);
       sunrise24 = _ref.sunrise24,
       sunset = _ref.sunset,
       sunset24 = _ref.sunset24;
-  var sunriseAsDec = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunrise24).asHours();
-  var sunsetAsDec = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunset24).asHours();
-  var sunriseCoord = sunriseAsDec / 24 * 100;
-  var sunsetCoord = sunsetAsDec / 24 * 100;
+  var sunriseAsDecimal = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunrise24).asHours();
+  var sunsetAsDeciaml = moment_timezone__WEBPACK_IMPORTED_MODULE_1___default.a.duration(sunset24).asHours();
+  var sunriseCoord = sunriseAsDecimal / 24 * 100;
+  var sunsetCoord = sunsetAsDeciaml / 24 * 100;
   var sunsetLeft = "calc(".concat(sunsetCoord, "% - 8px)");
-  var sunsetRight = 100 - sunsetAsDec / 24 * 100;
+  var sunsetRight = 100 - sunsetAsDeciaml / 24 * 100;
   var position = {
     left: "calc(".concat(sunriseCoord, "% + 7px)"),
     right: "calc(".concat(sunsetRight, "% - 1px)")
   };
+  var latitude = latLong.split(',')[0];
+  var longitude = latLong.split(',')[1].trim();
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    style: {
-      fontWeight: 700
-    }
-  }, location, " (", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, latLong), ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "viz-wrapper"
+    className: "location__name"
+  }, location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "location__viz viz"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "marker",
+    className: "viz__marker",
     style: {
       left: sunriseCoord + '%'
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "marker",
+    className: "viz__marker",
     style: {
       left: sunsetLeft
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "line",
+    className: "viz__line",
     style: position
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "label",
+    className: "viz__label",
     style: {
       left: sunriseCoord + '%'
     }
   }, sunrise), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "label",
+    className: "viz__label",
     style: {
       left: sunsetLeft
     }
-  }, sunset)));
+  }, sunset)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "location__latLong"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lat: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, latitude)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Long: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, longitude))));
 });
 
 /***/ }),
@@ -42812,7 +42814,7 @@ var locations = [{
   location: "Los Angeles",
   coords: "34.0522, -118.2437"
 }, {
-  location: "Medellín",
+  location: "Medellín, Colombia",
   coords: "6.2442, -75.5812"
 }, {
   location: "Wells, Maine",
@@ -42833,7 +42835,7 @@ var locations = [{
   location: "Tokyo",
   coords: "35.6895, 139.6917"
 }, {
-  location: "Aukland",
+  location: "Aukland, New Zealand",
   coords: "-36.8485, 174.7633"
 }];
 

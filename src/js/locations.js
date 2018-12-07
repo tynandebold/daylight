@@ -4,7 +4,7 @@ export const locations = [
     coords: "34.0522, -118.2437"
   },
   {
-    location: "Medellín",
+    location: "Medellín, Colombia",
     coords: "6.2442, -75.5812"
   },
   {
@@ -32,7 +32,7 @@ export const locations = [
     coords: "35.6895, 139.6917"
   },
   {
-    location: "Aukland",
+    location: "Aukland, New Zealand",
     coords: "-36.8485, 174.7633"
   }
 ];

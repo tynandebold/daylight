@@ -1,12 +1,20 @@
+:root {
+  --color-black: #000;
+  --color-light-blue: lightblue;
+  --color-light-green: lightseagreen;
+  --color-yellow-opacity: #ffeb3b38;
+  --color-yellow: #ffeb3b;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   color: whitesmoke;
-  background: #000;
+  background: var(--color-black);
   font-family: 'IBM Plex Sans', sans-serif;
-  margin: 20px;
+  margin: 1.5em;
 }
 
 #root {
@@ -16,24 +24,48 @@ body {
 }
 
 .location {
-  border: 1px solid lightblue;
-  margin-bottom: 20px;
-  padding: 20px;
+  border: 1px solid var(--color-light-blue);
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  position: relative;
   width: calc(33% - 10px);
 
   @media (max-width: 850px) {
     width: 100%;
   }
+
+  p {
+    margin: 0;
+  }
+
+  .location__name {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+
+  .location__latLong {
+    display: flex;
+    font-size: 80%;
+    flex-direction: column;
+    position: absolute;
+    right: 1.5em;
+    text-align: right;
+    top: 2.1em;
+
+    span {
+      margin-left: 5px;
+    }
+  }
 }
 
-.viz-wrapper {
-  background: lightseagreen;
+.location__viz {
+  background: var(--color-light-green);
   height: 2px;
   margin: 120px 0 10px;
   position: relative;
   
-  .marker {
-    background: #ffeb3b;
+  .viz__marker {
+    background: var(--color-yellow);
     border-radius: 50%;
     height: 16px;
     position: absolute;
@@ -42,18 +74,18 @@ body {
     z-index: 2;
   }
   
-  .line {
-    background: #ffeb3b38;
+  .viz__line {
+    background: var(--color-yellow-opacity);
     height: 90px;
     position: absolute;
     top: -89px;
-    border: dashed 0.1em #ffeb3b;
-    border-color: #ffeb3b transparent transparent transparent;
+    border: dashed 0.1em var(--color-yellow);
+    border-color: var(--color-yellow) transparent transparent transparent;
     border-radius: 50%/100px 100px 0 0;
     z-index: 1;
   }
   
-  .label {
+  .viz__label {
     font-size: 10px;
     position: absolute;
     top: 10px;
