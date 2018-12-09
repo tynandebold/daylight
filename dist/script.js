@@ -42594,7 +42594,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _js_Place__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/Place */ "./src/js/Place.js");
-/* harmony import */ var _js_locations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/locations */ "./src/js/locations.js");
+/* harmony import */ var _js_shapeData__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/shapeData */ "./src/js/shapeData.js");
+/* harmony import */ var _js_locations__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/locations */ "./src/js/locations.js");
+
 
 
 
@@ -42630,7 +42632,7 @@ function (_React$Component) {
       var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(location) {
-        var latLong, response, data, sunriseUnix, sunsetUnix, timeDiff, timeDiffMins, daylightNum;
+        var latLong, response, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -42646,23 +42648,18 @@ function (_React$Component) {
 
               case 6:
                 data = _context.sent;
-                sunriseUnix = data.daily.data["0"].sunriseTime;
-                sunsetUnix = data.daily.data["0"].sunsetTime;
-                timeDiff = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.duration(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix)));
-                timeDiffMins = timeDiff._data.seconds >= 30 ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
-                daylightNum = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix), 'hours', true);
-                return _context.abrupt("return", Object.assign({}, location, {
-                  daylight: "".concat(timeDiff._data.hours, " hours, ").concat(timeDiffMins, " minutes"),
-                  daylightNum: daylightNum,
-                  latLong: latLong,
-                  sunrise: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
-                  sunrise24: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunriseUnix).tz(data.timezone).format('HH:mm'),
-                  sunset: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
-                  sunset24: moment_timezone__WEBPACK_IMPORTED_MODULE_13___default.a.unix(sunsetUnix).tz(data.timezone).format('HH:mm'),
-                  timezone: data.timezone
-                }));
 
-              case 13:
+                if (response.ok) {
+                  _context.next = 9;
+                  break;
+                }
+
+                throw new Error(JSON.stringify(data));
+
+              case 9:
+                return _context.abrupt("return", Object(_js_shapeData__WEBPACK_IMPORTED_MODULE_15__["shapeData"])(data, latLong, location));
+
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -42676,7 +42673,9 @@ function (_React$Component) {
     }());
 
     _this.state = {
-      data: []
+      data: [],
+      error: false,
+      loaded: false
     };
     return _this;
   }
@@ -42688,27 +42687,30 @@ function (_React$Component) {
 
       var today = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()().format('MM-DD-YYYY');
       var setDate = localStorage.getItem('daylightDay');
-      var hasData = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()().isSame(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()(setDate, 'MM-DD-YYYY'), 'day');
+      var setData = JSON.parse(localStorage.getItem('daylightData'));
+      var hasDate = moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()().isSame(moment_timezone__WEBPACK_IMPORTED_MODULE_13___default()(setDate, 'MM-DD-YYYY'), 'day');
+      var hasData = setData != null;
 
-      if (hasData) {
+      if (hasDate && hasData) {
         this.setState({
-          data: JSON.parse(localStorage.getItem('daylightData'))
+          data: JSON.parse(localStorage.getItem('daylightData')),
+          loaded: true
         });
       } else {
-        this.getAllData().then(function (data) {
+        Promise.all(_js_locations__WEBPACK_IMPORTED_MODULE_16__["locations"].map(this.fetchData)).then(function (data) {
           localStorage.setItem('daylightData', JSON.stringify(data));
           localStorage.setItem('daylightDay', today);
 
           _this2.setState({
-            data: data
+            data: data,
+            loaded: true
+          });
+        }).catch(function (err) {
+          _this2.setState({
+            error: JSON.parse(err.message)
           });
         });
       }
-    }
-  }, {
-    key: "getAllData",
-    value: function getAllData() {
-      return Promise.all(_js_locations__WEBPACK_IMPORTED_MODULE_15__["locations"].map(this.fetchData));
     }
   }, {
     key: "render",
@@ -42718,7 +42720,7 @@ function (_React$Component) {
           key: item.location
         }));
       });
-      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, places);
+      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, places, this.state.error && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, "An error occured (code ", this.state.error.code, "). ", this.state.error.error, " Please try again later."));
     }
   }]);
 
@@ -42838,6 +42840,39 @@ var locations = [{
   location: "Aukland, New Zealand",
   coords: "-36.8485, 174.7633"
 }];
+
+/***/ }),
+
+/***/ "./src/js/shapeData.js":
+/*!*****************************!*\
+  !*** ./src/js/shapeData.js ***!
+  \*****************************/
+/*! exports provided: shapeData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shapeData", function() { return shapeData; });
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_0__);
+
+function shapeData(data, latLong, location) {
+  var sunriseUnix = data.daily.data["0"].sunriseTime;
+  var sunsetUnix = data.daily.data["0"].sunsetTime;
+  var timeDiff = moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.duration(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix)));
+  var timeDiffMins = timeDiff._data.seconds >= 30 ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
+  var daylightNum = moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix), 'hours', true);
+  return Object.assign({}, location, {
+    daylight: "".concat(timeDiff._data.hours, " hrs, ").concat(timeDiffMins, " min"),
+    daylightNum: daylightNum,
+    latLong: latLong,
+    sunrise: moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
+    sunrise24: moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix).tz(data.timezone).format('HH:mm'),
+    sunset: moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
+    sunset24: moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).tz(data.timezone).format('HH:mm'),
+    timezone: data.timezone
+  });
+}
 
 /***/ }),
 

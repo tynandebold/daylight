@@ -4,58 +4,59 @@ import ReactDOM from 'react-dom';
 import moment from 'moment-timezone';
 
 import Place from './js/Place';
+import { shapeData } from './js/shapeData'
 import { locations } from './js/locations';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { data: [] };
+    this.state = { 
+      data: [],
+      error: false,
+      loaded: false
+    };
   }
 
   componentDidMount() {
     const today = moment().format('MM-DD-YYYY');
     const setDate = localStorage.getItem('daylightDay');
-    const hasData = moment().isSame(moment(setDate, 'MM-DD-YYYY'), 'day');    
+    const setData = JSON.parse(localStorage.getItem('daylightData'));
+    const hasDate = moment().isSame(moment(setDate, 'MM-DD-YYYY'), 'day'); 
+    const hasData = setData != null;
 
-    if (hasData) {
+    if (hasDate && hasData) {
       this.setState({
-        data: JSON.parse(localStorage.getItem('daylightData'))
+        data: JSON.parse(localStorage.getItem('daylightData')),
+        loaded: true
       });
     } else {
-      this.getAllData().then((data) => {
-        localStorage.setItem('daylightData', JSON.stringify(data));
-        localStorage.setItem('daylightDay', today);
-        this.setState({ data });
-      });
+      Promise.all(locations.map(this.fetchData))
+        .then((data) => {
+          localStorage.setItem('daylightData', JSON.stringify(data));
+          localStorage.setItem('daylightDay', today);
+          this.setState({
+            data,
+            loaded: true
+          });
+        })
+        .catch(err => {
+          this.setState({
+            error: JSON.parse(err.message)
+          });
+        });
     }
-  }
-
-  getAllData() {
-    return Promise.all(locations.map(this.fetchData));
   }
 
   fetchData = async (location) => {
     const latLong = location.coords;
     const response = await fetch(`https://api.darksky.net/forecast/b9c97c92e43e0065f6bddcaed31ec0df/${latLong}?exclude=[currently,minutely,hourly,flags`);
     const data = await response.json();
-
-    const sunriseUnix = data.daily.data["0"].sunriseTime;
-    const sunsetUnix = data.daily.data["0"].sunsetTime;
-    const timeDiff = moment.duration(moment.unix(sunsetUnix).diff(moment.unix(sunriseUnix)));
-    const timeDiffMins = (timeDiff._data.seconds >= 30) ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
-    const daylightNum = moment.unix(sunsetUnix).diff(moment.unix(sunriseUnix), 'hours', true);
-
-    return Object.assign({}, location, {
-      daylight: `${timeDiff._data.hours} hours, ${timeDiffMins} minutes`,
-      daylightNum,
-      latLong,
-      sunrise: moment.unix(sunriseUnix).tz(data.timezone).format('h:mma'),
-      sunrise24: moment.unix(sunriseUnix).tz(data.timezone).format('HH:mm'),
-      sunset: moment.unix(sunsetUnix).tz(data.timezone).format('h:mma'),
-      sunset24: moment.unix(sunsetUnix).tz(data.timezone).format('HH:mm'),
-      timezone: data.timezone
-    });
+    
+    if (!response.ok) {
+      throw new Error(JSON.stringify(data));
+    }
+    return shapeData(data, latLong, location);
   }
 
   render() {
@@ -66,6 +67,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         {places}
+        {this.state.error && <p>An error occured (code {this.state.error.code}). {this.state.error.error} Please try again later.</p>}
       </React.Fragment>
     );
   }
