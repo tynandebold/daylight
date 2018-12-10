@@ -4,11 +4,13 @@ export function shapeData(data, latLong, location) {
   const sunriseUnix = data.daily.data["0"].sunriseTime;
   const sunsetUnix = data.daily.data["0"].sunsetTime;
   const timeDiff = moment.duration(moment.unix(sunsetUnix).diff(moment.unix(sunriseUnix)));
-  const timeDiffMins = (timeDiff._data.seconds >= 30) ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
+  let timeDiffMins = (timeDiff._data.seconds >= 30) ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
+  timeDiffMins = timeDiffMins < 10 ? `0${timeDiffMins}` : timeDiffMins;
   const daylightNum = moment.unix(sunsetUnix).diff(moment.unix(sunriseUnix), 'hours', true);
 
   return Object.assign({}, location, {
-    daylight: `${timeDiff._data.hours} hrs, ${timeDiffMins} min`,
+    daylightHrs: timeDiff._data.hours < 10 ? `0${timeDiff._data.hours}` : timeDiff._data.hours,
+    daylightMin: timeDiffMins,
     daylightNum,
     latLong,
     sunrise: moment.unix(sunriseUnix).tz(data.timezone).format('h:mma'),

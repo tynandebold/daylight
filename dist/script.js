@@ -1171,7 +1171,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: 'IBM Plex Sans', sans-serif;\n  margin: 1.5em; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid lightblue;\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.location__viz {\n  background: lightseagreen;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background-image: -webkit-gradient(linear, left bottom, left top, from(#e4c20d), color-stop(#d18f23), color-stop(#ae622e), color-stop(#7f3f2f), color-stop(#4b2525), color-stop(#341b1d), color-stop(#1e1113), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), color-stop(#000), to(#000));\n  background-image: linear-gradient(to top, #e4c20d, #d18f23, #ae622e, #7f3f2f, #4b2525, #341b1d, #1e1113, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000);\n  font-family: \"IBM Plex Sans\", sans-serif;\n  min-height: calc(100vh - 1.5em);\n  margin: 1.5em 1.5em 0; }\n\n#root {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid #DAE5E0;\n  border-radius: 0.2em;\n  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n          box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.viz.location__viz {\n  background: #20B2AA;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n\n.viz.location__viz .viz__daylight-wrapper {\n    bottom: 24px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    font-family: monospace;\n    left: calc(50% - 24px);\n    position: absolute; }\n", ""]);
 
 // exports
 
@@ -42707,7 +42707,7 @@ function (_React$Component) {
           });
         }).catch(function (err) {
           _this2.setState({
-            error: JSON.parse(err.message)
+            error: err
           });
         });
       }
@@ -42720,7 +42720,7 @@ function (_React$Component) {
           key: item.location
         }));
       });
-      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, places, this.state.error && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, "An error occured (code ", this.state.error.code, "). ", this.state.error.error, " Please try again later."));
+      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, places, this.state.error && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, "An error occurred. Please try again later."));
     }
   }]);
 
@@ -42740,14 +42740,16 @@ react_dom__WEBPACK_IMPORTED_MODULE_12___default.a.render(react__WEBPACK_IMPORTED
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Place; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_1__);
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var daylight = _ref.daylight,
+function Place(_ref) {
+  var daylightHrs = _ref.daylightHrs,
+      daylightMin = _ref.daylightMin,
       latLong = _ref.latLong,
       location = _ref.location,
       sunrise = _ref.sunrise,
@@ -42770,7 +42772,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "location"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "location__name"
-  }, location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Daylight: ", daylight), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location__viz viz"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "viz__marker",
@@ -42785,7 +42787,9 @@ __webpack_require__.r(__webpack_exports__);
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "viz__line",
     style: position
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "viz__daylight-wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, daylightHrs, " hrs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, daylightMin, " min"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "viz__label",
     style: {
       left: sunriseCoord + '%'
@@ -42798,7 +42802,7 @@ __webpack_require__.r(__webpack_exports__);
   }, sunset)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location__latLong"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lat: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, latitude)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Long: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, longitude))));
-});
+}
 
 /***/ }),
 
@@ -42861,9 +42865,11 @@ function shapeData(data, latLong, location) {
   var sunsetUnix = data.daily.data["0"].sunsetTime;
   var timeDiff = moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.duration(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix)));
   var timeDiffMins = timeDiff._data.seconds >= 30 ? timeDiff._data.minutes + 1 : timeDiff._data.minutes;
+  timeDiffMins = timeDiffMins < 10 ? "0".concat(timeDiffMins) : timeDiffMins;
   var daylightNum = moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunsetUnix).diff(moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix), 'hours', true);
   return Object.assign({}, location, {
-    daylight: "".concat(timeDiff._data.hours, " hrs, ").concat(timeDiffMins, " min"),
+    daylightHrs: timeDiff._data.hours < 10 ? "0".concat(timeDiff._data.hours) : timeDiff._data.hours,
+    daylightMin: timeDiffMins,
     daylightNum: daylightNum,
     latLong: latLong,
     sunrise: moment_timezone__WEBPACK_IMPORTED_MODULE_0___default.a.unix(sunriseUnix).tz(data.timezone).format('h:mma'),

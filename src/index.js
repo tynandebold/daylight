@@ -42,7 +42,7 @@ class App extends React.Component {
         })
         .catch(err => {
           this.setState({
-            error: JSON.parse(err.message)
+            error: err
           });
         });
     }
@@ -67,7 +67,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         {places}
-        {this.state.error && <p>An error occured (code {this.state.error.code}). {this.state.error.error} Please try again later.</p>}
+        {this.state.error && <p>An error occurred. Please try again later.</p>}
       </React.Fragment>
     );
   }

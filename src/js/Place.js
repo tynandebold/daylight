@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment-timezone';
 
-export default function ({ daylight, latLong, location, sunrise, sunrise24, sunset, sunset24 }) {
+export default function Place({ daylightHrs, daylightMin, latLong, location, sunrise, sunrise24, sunset, sunset24 }) {
   const sunriseAsDecimal = moment.duration(sunrise24).asHours();
   const sunsetAsDeciaml = moment.duration(sunset24).asHours();
   const sunriseCoord = (sunriseAsDecimal / 24) * 100;
@@ -18,11 +18,15 @@ export default function ({ daylight, latLong, location, sunrise, sunrise24, suns
   return (
     <div className="location">
       <p className="location__name">{location}</p>
-      <p>Daylight: {daylight}</p>
       <div className="location__viz viz">
         <div className="viz__marker" style={{ left: sunriseCoord + '%' }}></div>
         <div className="viz__marker" style={{ left: sunsetLeft }}></div>
-        <div className="viz__line" style={position}></div>
+        <div className="viz__line" style={position}>
+          <div className="viz__daylight-wrapper">
+            <span>{daylightHrs} hrs</span>
+            <span>{daylightMin} min</span>
+          </div>
+        </div>
         <div className="viz__label" style={{ left: sunriseCoord + '%' }}>{sunrise}</div>
         <div className="viz__label" style={{ left: sunsetLeft }}>{sunset}</div>
       </div>

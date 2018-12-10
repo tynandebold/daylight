@@ -1,7 +1,7 @@
 :root {
   --color-black: #000;
-  --color-light-blue: lightblue;
-  --color-light-green: lightseagreen;
+  --color-light-blue: #DAE5E0;
+  --color-light-green: #20B2AA;
   --color-yellow-opacity: #ffeb3b38;
   --color-yellow: #ffeb3b;
 }
@@ -12,9 +12,34 @@
 
 body {
   color: whitesmoke;
-  background: var(--color-black);
-  font-family: 'IBM Plex Sans', sans-serif;
-  margin: 1.5em;
+  background-image: linear-gradient(
+    to top,
+    #e4c20d,
+    #d18f23,
+    #ae622e,
+    #7f3f2f,
+    #4b2525,
+    #341b1d,
+    #1e1113,
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black)
+  );
+  font-family: "IBM Plex Sans", sans-serif;
+  min-height: calc(100vh - 1.5em);
+  margin: 1.5em 1.5em 0;
 }
 
 #root {
@@ -25,6 +50,8 @@ body {
 
 .location {
   border: 1px solid var(--color-light-blue);
+  border-radius: 0.2em;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   margin-bottom: 1.5em;
   padding: 1.5em;
   position: relative;
@@ -58,12 +85,12 @@ body {
   }
 }
 
-.location__viz {
+.viz.location__viz {
   background: var(--color-light-green);
   height: 2px;
   margin: 120px 0 10px;
   position: relative;
-  
+
   .viz__marker {
     background: var(--color-yellow);
     border-radius: 50%;
@@ -73,7 +100,7 @@ body {
     width: 16px;
     z-index: 2;
   }
-  
+
   .viz__line {
     background: var(--color-yellow-opacity);
     height: 90px;
@@ -84,10 +111,19 @@ body {
     border-radius: 50%/100px 100px 0 0;
     z-index: 1;
   }
-  
+
   .viz__label {
     font-size: 10px;
     position: absolute;
     top: 10px;
+  }
+
+  .viz__daylight-wrapper {
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    left: calc(50% - 24px);
+    position: absolute;
   }
 }
