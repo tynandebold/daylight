@@ -32,7 +32,19 @@ export const locations = [
     coords: "35.6895, 139.6917"
   },
   {
-    location: "Aukland, New Zealand",
-    coords: "-36.8485, 174.7633"
+    location: "Queenstown, New Zealand",
+    coords: "-45.0312, 168.6626"
+  },
+  {
+    location: "Buenos Aires",
+    coords: "-34.6037, -58.3816"
+  },
+  {
+    location: "Cape Town",
+    coords: "-33.9249, 18.4241"
+  },
+  {
+    location: "Tromsø, Norway",
+    coords: "69.6492, 18.9553"
   }
 ];

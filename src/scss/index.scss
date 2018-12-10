@@ -1,18 +1,5 @@
 :root {
-  --color-black: #000;
-  --color-light-blue: #DAE5E0;
-  --color-light-green: #20B2AA;
-  --color-yellow-opacity: #ffeb3b38;
-  --color-yellow: #ffeb3b;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  color: whitesmoke;
-  background-image: linear-gradient(
+  --bg-gradient-top: linear-gradient(
     to top,
     #e4c20d,
     #d18f23,
@@ -37,12 +24,75 @@ body {
     var(--color-black),
     var(--color-black)
   );
+  --bg-gradient-bottom: linear-gradient(
+    to bottom,
+    #e4c20d,
+    #d18f23,
+    #ae622e,
+    #7f3f2f,
+    #4b2525,
+    #341b1d,
+    #1e1113,
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black),
+    var(--color-black)
+  );
+  --color-black: #000;
+  --color-light-blue: #DAE5E0;
+  --color-light-green: #20B2AA;
+  --color-yellow-opacity: #ffeb3b38;
+  --color-yellow: #ffeb3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: whitesmoke;
+  background-image: var(--bg-gradient-top);
   font-family: "IBM Plex Sans", sans-serif;
   min-height: calc(100vh - 1.5em);
   margin: 1.5em 1.5em 0;
 }
 
 #root {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title-card {
+  font-size: 2.5em;
+  margin: 0;
+  max-width: 35%;
+
+  h1 {
+    font-weight: 400;
+    margin: 0 0 0.5em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+  }
+}
+
+.locations {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -79,6 +129,10 @@ body {
     text-align: right;
     top: 2.1em;
 
+    &.no-daylight {
+      display: none;
+    }
+
     span {
       margin-left: 5px;
     }
@@ -99,6 +153,10 @@ body {
     top: -7.5px;
     width: 16px;
     z-index: 2;
+
+    &.no-daylight {
+      display: none;
+    }
   }
 
   .viz__line {
@@ -110,12 +168,24 @@ body {
     border-color: var(--color-yellow) transparent transparent transparent;
     border-radius: 50%/100px 100px 0 0;
     z-index: 1;
+
+    &.no-daylight {
+      background: none;
+      border: none;
+      left: auto !important;
+      right: auto !important;
+      width: 100%;
+    }
   }
 
   .viz__label {
     font-size: 10px;
     position: absolute;
     top: 10px;
+
+    &.no-daylight {
+      display: none;
+    }
   }
 
   .viz__daylight-wrapper {
@@ -123,7 +193,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: monospace;
-    left: calc(50% - 24px);
+    left: calc(50% - 23px);
     position: absolute;
   }
 }

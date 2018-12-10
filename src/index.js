@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import moment from 'moment-timezone';
 
 import Place from './js/Place';
+import TitleCard from './js/TitleCard';
 import { shapeData } from './js/shapeData'
 import { locations } from './js/locations';
 
@@ -60,13 +61,14 @@ class App extends React.Component {
   }
 
   render() {
-    const places = this.state.data.map(item => {
+    const locations = this.state.data.map(item => {
       return <Place {...item} key={item.location} />
     });
     
     return (
       <React.Fragment>
-        {places}
+        <TitleCard />
+        <div className="locations">{locations}</div>
         {this.state.error && <p>An error occurred. Please try again later.</p>}
       </React.Fragment>
     );

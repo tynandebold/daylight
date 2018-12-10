@@ -14,23 +14,24 @@ export default function Place({ daylightHrs, daylightMin, latLong, location, sun
   };
   const latitude = latLong.split(',')[0];
   const longitude = latLong.split(',')[1].trim();
+  const noDaylight = daylightMin === '00' ? 'no-daylight' : '';  
 
   return (
-    <div className="location">
-      <p className="location__name">{location}</p>
-      <div className="location__viz viz">
-        <div className="viz__marker" style={{ left: sunriseCoord + '%' }}></div>
-        <div className="viz__marker" style={{ left: sunsetLeft }}></div>
-        <div className="viz__line" style={position}>
-          <div className="viz__daylight-wrapper">
+    <div className='location'>
+      <p className='location__name'>{location}</p>
+      <div className='location__viz viz'>
+        <div className={`viz__marker ${noDaylight}`} style={{ left: sunriseCoord + '%' }}></div>
+        <div className={`viz__marker ${noDaylight}`} style={{ left: sunsetLeft }}></div>
+        <div className={`viz__line ${noDaylight}`} style={position}>
+          <div className='viz__daylight-wrapper'>
             <span>{daylightHrs} hrs</span>
             <span>{daylightMin} min</span>
           </div>
         </div>
-        <div className="viz__label" style={{ left: sunriseCoord + '%' }}>{sunrise}</div>
-        <div className="viz__label" style={{ left: sunsetLeft }}>{sunset}</div>
+        <div className={`viz__label ${noDaylight}`} style={{ left: sunriseCoord + '%' }}>{sunrise}</div>
+        <div className={`viz__label ${noDaylight}`} style={{ left: sunsetLeft }}>{sunset}</div>
       </div>
-      <div className="location__latLong">
+      <div className={`location__latLong ${noDaylight}`}>
         <p>Lat: <span>{latitude}</span></p>
         <p>Long: <span>{longitude}</span></p>
       </div>
