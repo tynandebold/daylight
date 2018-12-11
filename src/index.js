@@ -51,15 +51,15 @@ class App extends React.Component {
 
   fetchData = async (location) => {
     const latLong = location.coords;
-    // b9c97c92e43e0065f6bddcaed31ec0df
-    const response = await fetch(`https://api.darksky.net/forecast/34e3e42465fd886ceb121ba9a0a31b78/${latLong}?exclude=[currently,minutely,hourly,flags`, {
+    const exlude = 'currently,minutely,hourly,flags';
+    const response = await fetch(`https://dark-sky-proxy-j3a39gjn2.now.sh/api/v1/weather?latLong=${latLong}&exclude=${exlude}`, {
       credentials: 'omit',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
-      mode: 'no-cors',
+      mode: 'cors',
     });
-    const data = await response.json();
+    const data = await response.json();    
     
     if (!response.ok) {
       throw new Error(JSON.stringify(data));

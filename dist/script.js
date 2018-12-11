@@ -42634,40 +42634,41 @@ function (_React$Component) {
       var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(location) {
-        var latLong, response, data;
+        var latLong, exlude, response, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 latLong = location.coords;
-                _context.next = 3;
-                return fetch("https://api.darksky.net/forecast/b9c97c92e43e0065f6bddcaed31ec0df/".concat(latLong, "?exclude=[currently,minutely,hourly,flags"), {
+                exlude = 'currently,minutely,hourly,flags';
+                _context.next = 4;
+                return fetch("https://dark-sky-proxy-j3a39gjn2.now.sh/api/v1/weather?latLong=".concat(latLong, "&exclude=").concat(exlude), {
                   credentials: 'omit',
                   headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                   },
-                  mode: 'no-cors'
+                  mode: 'cors'
                 });
 
-              case 3:
+              case 4:
                 response = _context.sent;
-                _context.next = 6;
+                _context.next = 7;
                 return response.json();
 
-              case 6:
+              case 7:
                 data = _context.sent;
 
                 if (response.ok) {
-                  _context.next = 9;
+                  _context.next = 10;
                   break;
                 }
 
                 throw new Error(JSON.stringify(data));
 
-              case 9:
+              case 10:
                 return _context.abrupt("return", Object(_js_shapeData__WEBPACK_IMPORTED_MODULE_16__["shapeData"])(data, latLong, location));
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
