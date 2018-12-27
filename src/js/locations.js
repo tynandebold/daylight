@@ -40,8 +40,8 @@ export const locations = [
     coords: "-34.6037, -58.3816"
   },
   {
-    location: "Cape Town",
-    coords: "-33.9249, 18.4241"
+    location: "New York",
+    coords: "40.7128, -74.0060"
   },
   {
     location: "Tromsø, Norway",
