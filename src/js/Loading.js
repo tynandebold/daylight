@@ -12,11 +12,11 @@ export default class Loading extends React.Component {
     const stopper = this.state.text + '...';
     this.interval = window.setInterval(() => {
       this.state.text === stopper
-       ? this.setState(() => ({text: this.props.text}))
-       : this.setState((prevState) => ({text: prevState.text + '.'}));
+        ? this.setState(() => ({ text: this.props.text }))
+        : this.setState((prevState) => ({ text: prevState.text + '.' }));
     }, this.props.interval);
   }
-  
+
   componentWillUnmount() {
     window.clearInterval(this.interval);
   }
