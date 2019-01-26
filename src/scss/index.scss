@@ -1,29 +1,4 @@
 :root {
-  --bg-gradient-top: linear-gradient(
-    to top,
-    #e4c20d,
-    #d18f23,
-    #ae622e,
-    #7f3f2f,
-    #4b2525,
-    #341b1d,
-    #1e1113,
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black),
-    var(--color-black)
-  );
   --color-black: #000;
   --color-light-blue: #DAE5E0;
   --color-light-green: #20B2AA;
@@ -38,7 +13,6 @@
 
 body {
   color: var(--color-white);
-  // background-image: var(--bg-gradient-top);
   background: var(--color-black);
   font-family: "IBM Plex Sans", sans-serif;
   min-height: calc(100vh - 1.5em);
@@ -52,27 +26,41 @@ body {
   justify-content: space-between;
 }
 
-.title-card {
-  font-family: monospace;
-  font-size: 2.5em;
-  margin: 0;
-  max-width: 45%;
-
-  @media (max-width: 850px) {
-    max-width: 100%;
+.title-card-wrapper {
+  .title-card {
+    font-family: monospace;
+    font-size: 2.5em;
+    margin: 0 auto;
+    max-width: 45%;
+    text-align: justify;
+  
+    @media (max-width: 850px) {
+      max-width: 100%;
+    }
+  
+    h1 {
+      font-weight: 400;
+      margin: 0 0 0.5em;
+    }
+  
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.75rem;
+    }
   }
-
-  h1 {
+  
+  h4 {
     font-weight: 400;
-    margin: 0 0 0.5em;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.75rem;
+    margin: 2rem auto 0;
+    max-width: 45%;
+  
+    @media (max-width: 850px) {
+      max-width: 100%;
+    }
   }
 }
+
 
 .locations {
   display: flex;

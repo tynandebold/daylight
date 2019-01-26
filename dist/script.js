@@ -1171,7 +1171,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: \"IBM Plex Sans\", sans-serif;\n  min-height: calc(100vh - 1.5em);\n  margin: 1.5em 1.5em 0; }\n\n#root {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.title-card {\n  font-family: monospace;\n  font-size: 2.5em;\n  margin: 0;\n  max-width: 45%; }\n\n@media (max-width: 850px) {\n    .title-card {\n      max-width: 100%; } }\n\n.title-card h1 {\n    font-weight: 400;\n    margin: 0 0 0.5em; }\n\n.title-card h3 {\n    font-size: 20px;\n    font-size: 1.25rem;\n    font-weight: 400;\n    line-height: 28px;\n    line-height: 1.75rem; }\n\n.locations {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid #DAE5E0;\n  border-radius: 0.2em;\n  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n          box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong.no-daylight {\n      display: none; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.viz.location__viz {\n  background: #20B2AA;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz.location__viz .viz__marker.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz.location__viz .viz__line.no-daylight {\n      background: none;\n      border: none;\n      left: auto !important;\n      right: auto !important;\n      width: 100%; }\n\n.viz.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n\n.viz.location__viz .viz__label.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__daylight-wrapper {\n    bottom: 24px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    font-family: monospace;\n    left: calc(50% - 23px);\n    position: absolute; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: \"IBM Plex Sans\", sans-serif;\n  min-height: calc(100vh - 1.5em);\n  margin: 1.5em 1.5em 0; }\n\n#root {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.title-card-wrapper .title-card {\n  font-family: monospace;\n  font-size: 2.5em;\n  margin: 0 auto;\n  max-width: 45%;\n  text-align: justify; }\n\n@media (max-width: 850px) {\n    .title-card-wrapper .title-card {\n      max-width: 100%; } }\n\n.title-card-wrapper .title-card h1 {\n    font-weight: 400;\n    margin: 0 0 0.5em; }\n\n.title-card-wrapper .title-card h3 {\n    font-size: 20px;\n    font-size: 1.25rem;\n    font-weight: 400;\n    line-height: 28px;\n    line-height: 1.75rem; }\n\n.title-card-wrapper h4 {\n  font-weight: 400;\n  margin: 32px auto 0;\n  margin: 2rem auto 0;\n  max-width: 45%; }\n\n@media (max-width: 850px) {\n    .title-card-wrapper h4 {\n      max-width: 100%; } }\n\n.locations {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid #DAE5E0;\n  border-radius: 0.2em;\n  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n          box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong.no-daylight {\n      display: none; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.viz.location__viz {\n  background: #20B2AA;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz.location__viz .viz__marker.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz.location__viz .viz__line.no-daylight {\n      background: none;\n      border: none;\n      left: auto !important;\n      right: auto !important;\n      width: 100%; }\n\n.viz.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n\n.viz.location__viz .viz__label.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__daylight-wrapper {\n    bottom: 24px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    font-family: monospace;\n    left: calc(50% - 23px);\n    position: absolute; }\n", ""]);
 
 // exports
 
@@ -42594,9 +42594,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
 /* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _js_Place__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/Place */ "./src/js/Place.js");
-/* harmony import */ var _js_TitleCard__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/TitleCard */ "./src/js/TitleCard.js");
-/* harmony import */ var _js_shapeData__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/shapeData */ "./src/js/shapeData.js");
-/* harmony import */ var _js_locations__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./js/locations */ "./src/js/locations.js");
+/* harmony import */ var _js_Loading__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/Loading */ "./src/js/Loading.js");
+/* harmony import */ var _js_TitleCard__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/TitleCard */ "./src/js/TitleCard.js");
+/* harmony import */ var _js_shapeData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./js/shapeData */ "./src/js/shapeData.js");
+/* harmony import */ var _js_locations__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./js/locations */ "./src/js/locations.js");
+
 
 
 
@@ -42634,15 +42636,15 @@ function (_React$Component) {
       var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(location) {
-        var latLong, exlude, response, data;
+        var latLong, exclude, response, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 latLong = location.coords;
-                exlude = 'currently,minutely,hourly,flags';
+                exclude = 'currently,minutely,hourly,flags';
                 _context.next = 4;
-                return fetch("https://dark-sky-proxy-j3a39gjn2.now.sh/api/v1/weather?latLong=".concat(latLong, "&exclude=").concat(exlude), {
+                return fetch("https://dark-sky-proxy-j3a39gjn2.now.sh/api/v1/weather?latLong=".concat(latLong, "&exclude=").concat(exclude), {
                   credentials: 'omit',
                   headers: {
                     'Content-Type': 'application/json; charset=utf-8'
@@ -42666,7 +42668,7 @@ function (_React$Component) {
                 throw new Error(JSON.stringify(data));
 
               case 10:
-                return _context.abrupt("return", Object(_js_shapeData__WEBPACK_IMPORTED_MODULE_16__["shapeData"])(data, latLong, location));
+                return _context.abrupt("return", Object(_js_shapeData__WEBPACK_IMPORTED_MODULE_17__["shapeData"])(data, latLong, location));
 
               case 11:
               case "end":
@@ -42706,7 +42708,7 @@ function (_React$Component) {
           loaded: true
         });
       } else {
-        Promise.all(_js_locations__WEBPACK_IMPORTED_MODULE_17__["locations"].map(this.fetchData)).then(function (data) {
+        Promise.all(_js_locations__WEBPACK_IMPORTED_MODULE_18__["locations"].map(this.fetchData)).then(function (data) {
           localStorage.setItem('daylightData', JSON.stringify(data));
           localStorage.setItem('daylightDay', today);
 
@@ -42729,9 +42731,14 @@ function (_React$Component) {
           key: item.location
         }));
       });
-      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_js_TitleCard__WEBPACK_IMPORTED_MODULE_15__["default"], null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", {
+        className: "title-card-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_js_TitleCard__WEBPACK_IMPORTED_MODULE_16__["default"], null), this.state.error && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, "An error occurred. Please try again later."), !this.state.loaded && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_js_Loading__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        interval: "400",
+        text: "Fetching latest data"
+      })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", {
         className: "locations"
-      }, locations), this.state.error && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, "An error occurred. Please try again later."));
+      }, locations));
     }
   }]);
 
@@ -42739,6 +42746,89 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_11___default.a.Component);
 
 react_dom__WEBPACK_IMPORTED_MODULE_12___default.a.render(react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(App, null), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./src/js/Loading.js":
+/*!***************************!*\
+  !*** ./src/js/Loading.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Loading; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+var Loading =
+/*#__PURE__*/
+function (_React$Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Loading, _React$Component);
+
+  function Loading(props) {
+    var _this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Loading);
+
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Loading).call(this, props));
+    _this.state = {
+      text: _this.props.text
+    };
+    return _this;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Loading, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var stopper = this.state.text + '...';
+      this.interval = window.setInterval(function () {
+        _this2.state.text === stopper ? _this2.setState(function () {
+          return {
+            text: _this2.props.text
+          };
+        }) : _this2.setState(function (prevState) {
+          return {
+            text: prevState.text + '.'
+          };
+        });
+      }, this.props.interval);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.clearInterval(this.interval);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h4", null, this.state.text);
+    }
+  }]);
+
+  return Loading;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
 
 /***/ }),
 
@@ -42880,8 +42970,8 @@ var locations = [{
   location: "Buenos Aires",
   coords: "-34.6037, -58.3816"
 }, {
-  location: "Cape Town",
-  coords: "-33.9249, 18.4241"
+  location: "New York",
+  coords: "40.7128, -74.0060"
 }, {
   location: "Tromsø, Norway",
   coords: "69.6492, 18.9553"
