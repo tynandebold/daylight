@@ -1,29 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default class Loading extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: this.props.text
+const Loading = props => {
+  const [text, setText] = useState(props.text);
+  let interval;
+
+  useEffect(() => {
+    const stopper = props.text + '...';
+    interval = window.setInterval(() => {
+      text === stopper
+        ? setText(props.text)
+        : setText(prevText => prevText + '.');
+    }, props.interval);
+
+    return function cleanup() {
+      window.clearInterval(interval);
     };
-  }
+  });
 
-  componentDidMount() {
-    const stopper = this.state.text + '...';
-    this.interval = window.setInterval(() => {
-      this.state.text === stopper
-        ? this.setState(() => ({ text: this.props.text }))
-        : this.setState((prevState) => ({ text: prevState.text + '.' }));
-    }, this.props.interval);
-  }
+  return <h4>{text}</h4>;
+};
 
-  componentWillUnmount() {
-    window.clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <h4>{this.state.text}</h4>
-    )
-  }
-}
+export default Loading;
