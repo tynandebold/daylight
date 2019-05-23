@@ -44,7 +44,7 @@ export const locations = [
     coords: '40.7128, -74.0060'
   },
   {
-    location: 'Tromsø, Norway',
-    coords: '69.6492, 18.9553'
+    location: 'Anchorage, Alaska',
+    coords: '61.2181, -149.9003'
   }
 ];
