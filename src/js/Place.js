@@ -9,7 +9,7 @@ export default function Place({
   sunrise,
   sunrise24,
   sunset,
-  sunset24
+  sunset24,
 }) {
   const sunriseAsDecimal = moment.duration(sunrise24).asHours();
   const sunsetAsDecimal = moment.duration(sunset24).asHours();
@@ -19,11 +19,12 @@ export default function Place({
   const sunsetRight = 100 - (sunsetAsDecimal / 24) * 100;
   const position = {
     left: `calc(${sunriseCoord}% + 7px)`,
-    right: `calc(${sunsetRight}% - 1px)`
+    right: `calc(${sunsetRight}% - 1px)`,
   };
   const latitude = latLong.split(',')[0];
   const longitude = latLong.split(',')[1].trim();
-  const noDaylight = daylightMin === '00' ? 'no-daylight' : '';
+  const noDaylight =
+    +daylightHrs === 0 && daylightMin === '00' ? 'no-daylight' : '';
 
   return (
     <div className="location">

@@ -467,109 +467,114 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss ***!
-  \**********************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss ***!
+  \**********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
 exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  color: whitesmoke;\n  background: #000;\n  font-family: \"IBM Plex Sans\", sans-serif;\n  min-height: calc(100vh - 1.5em);\n  margin: 1.5em 1.5em 0; }\n\n#root {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.title-card-wrapper .title-card {\n  font-family: monospace;\n  font-size: 2.5em;\n  margin: 0 auto;\n  max-width: 45%;\n  text-align: justify; }\n\n@media (max-width: 850px) {\n    .title-card-wrapper .title-card {\n      max-width: 100%; } }\n\n.title-card-wrapper .title-card h1 {\n    font-weight: 400;\n    margin: 0 0 0.5em; }\n\n.title-card-wrapper .title-card h3 {\n    font-size: 20px;\n    font-size: 1.25rem;\n    font-weight: 400;\n    line-height: 28px;\n    line-height: 1.75rem; }\n\n.title-card-wrapper h4 {\n  font-weight: 400;\n  margin: 32px auto 0;\n  margin: 2rem auto 0;\n  max-width: 45%; }\n\n@media (max-width: 850px) {\n    .title-card-wrapper h4 {\n      max-width: 100%; } }\n\n.locations {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n\n.location {\n  border: 1px solid #DAE5E0;\n  border-radius: 0.2em;\n  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n          box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);\n  margin-bottom: 1.5em;\n  padding: 1.5em;\n  position: relative;\n  width: calc(33% - 10px); }\n\n@media (max-width: 850px) {\n    .location {\n      width: 100%; } }\n\n.location p {\n    margin: 0; }\n\n.location .location__name {\n    font-weight: 700;\n    margin-bottom: 0.5em; }\n\n.location .location__latLong {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 80%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    position: absolute;\n    right: 1.5em;\n    text-align: right;\n    top: 2.1em; }\n\n.location .location__latLong.no-daylight {\n      display: none; }\n\n.location .location__latLong span {\n      margin-left: 5px; }\n\n.viz.location__viz {\n  background: #20B2AA;\n  height: 2px;\n  margin: 120px 0 10px;\n  position: relative; }\n\n.viz.location__viz .viz__marker {\n    background: #ffeb3b;\n    border-radius: 50%;\n    height: 16px;\n    position: absolute;\n    top: -7.5px;\n    width: 16px;\n    z-index: 2; }\n\n.viz.location__viz .viz__marker.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__line {\n    background: rgba(255, 235, 59, 0.21961);\n    height: 90px;\n    position: absolute;\n    top: -89px;\n    border: dashed 0.1em #ffeb3b;\n    border-color: #ffeb3b transparent transparent transparent;\n    border-radius: 50%/100px 100px 0 0;\n    z-index: 1; }\n\n.viz.location__viz .viz__line.no-daylight {\n      background: none;\n      border: none;\n      left: auto !important;\n      right: auto !important;\n      width: 100%; }\n\n.viz.location__viz .viz__label {\n    font-size: 10px;\n    position: absolute;\n    top: 10px; }\n\n.viz.location__viz .viz__label.no-daylight {\n      display: none; }\n\n.viz.location__viz .viz__daylight-wrapper {\n    bottom: 24px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    font-family: monospace;\n    left: calc(50% - 23px);\n    position: absolute; }\n", ""]);
 
-// exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/lib/css-base.js":
-/*!*************************************************!*\
-  !*** ./node_modules/css-loader/lib/css-base.js ***!
-  \*************************************************/
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 /*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
 
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
 
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
+      if (item[2]) {
+        return '@media ' + item[2] + '{' + content + '}';
+      } else {
+        return content;
+      }
+    }).join('');
+  }; // import a list of modules into the list
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (i = 0; i < modules.length; i++) {
+      var item = modules[i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
 };
 
 function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
+  var content = item[1] || '';
+  var cssMapping = item[3];
 
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
+  if (!cssMapping) {
+    return content;
+  }
 
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
 
-	return [content].join('\n');
-}
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
 
-// Adapted from convert-source-map (MIT)
+
 function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+  return '/*# ' + data + ' */';
 }
-
 
 /***/ }),
 
@@ -45073,7 +45078,7 @@ function Place(_ref) {
   };
   var latitude = latLong.split(',')[0];
   var longitude = latLong.split(',')[1].trim();
-  var noDaylight = daylightMin === '00' ? 'no-daylight' : '';
+  var noDaylight = +daylightHrs === 0 && daylightMin === '00' ? 'no-daylight' : '';
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "location"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -45228,7 +45233,7 @@ function shapeData(data, latLong, location) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/postcss-loader/lib!../../node_modules/sass-loader/lib/loader.js!./index.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss");
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/lib!../../node_modules/sass-loader/lib/loader.js!./index.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/index.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
